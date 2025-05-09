@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Choose account type</h2>
+        <div class="account-type-select">
+            <div class="account-type">
+                <img src="doctor.jpg" alt="Doctor" class="account-icon">
+                <p>Doctor</p>
+                <input type="radio" id="doctor" name="account_type" value="doctor">
+            </div>
+            <div class="account-type">
+                 <img src="patient.jpg" alt="Patient" class="account-icon">
+                <p>Patient</p>
+                <input type="radio" id="patient" name="account_type" value="patient" checked>
+            </div>
+        </div>
+
+        <h2>Hello doctor</h2>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <a href="#">Forgot ?</a>
+            <button type="submit">Login</button>
+        </form>
+        <p>No account? <a href="patientlogin.html">Signup</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

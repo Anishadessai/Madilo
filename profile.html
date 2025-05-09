@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="profile-container">
+        <header class="profile-header">
+            <h1>Profile</h1>
+            <div class="header-actions">
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </header>
+
+        <section class="user-info">
+            <div class="profile-image-container">
+                <img src="profile_pic.jpg" alt="User Profile Picture" class="profile-image">
+                <button class="change-picture-button"><i class="fas fa-camera"></i> Change</button>
+            </div>
+            <div class="user-details">
+                <h2 class="user-name">Christopher</h2>
+                <p class="user-contact"><i class="fas fa-phone"></i> +41 9879857854</p>
+                <p class="user-location"><i class="fas fa-map-marker-alt"></i> West Ham</p>
+                <button class="edit-name-button"><i class="fas fa-pencil-alt"></i> Edit Name</button>
+            </div>
+        </section>
+
+        <nav class="profile-navigation">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i> My Appointments
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="far fa-bell"></i> Notifications
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-phone-alt"></i> Change Contact
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i> Change Location
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-lock"></i> Change Password
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-cog"></i> Settings
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="far fa-question-circle"></i> FAQs
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">
+                        <i class="fas fa-info-circle"></i> About Us
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="logout-section">
+            <a href="#" class="logout-button">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

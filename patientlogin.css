@@ -1,0 +1,121 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #A7E9BD 0%, #42C2FF 100%); /* Example gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-container {
+    background-color: #E0F4FF; /* Light background for the form area */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.signup-header {
+    background: linear-gradient(135deg, #386641 0%, #184E77 100%); /* Darker header */
+    color: white;
+    padding: 50px 20px;
+}
+
+.signup-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.signup-header p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.signup-form {
+    padding: 30px;
+}
+
+.signup-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mobile-input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.country-code {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 15px;
+    border-right: 1px solid #ccc;
+}
+
+.mobile-input input[type="tel"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.signup-form button {
+    background-color: #184E77; /* Primary button color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #386641; /* Darker shade on hover */
+}
+
+.trouble-signing-in {
+    margin-top: 20px;
+}
+
+.trouble-signing-in a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.trouble-signing-in a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .signup-container {
+        width: 95%;
+    }
+
+    .signup-header {
+        padding: 30px 15px;
+    }
+
+    .signup-header h1 {
+        font-size: 2em;
+    }
+
+    .signup-header p {
+        font-size: 1em;
+    }
+
+    .signup-form {
+        padding: 20px;
+    }
+}
