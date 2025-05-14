@@ -22,19 +22,20 @@
             <p class="trouble-signing-in"><a href="#">Trouble signing in?</a></p>
         </div>
     </div>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+            const mobile = document.getElementById("mobile").value.trim();
+        
+            // Simulate login with one valid number
+            if (mobile === "8767872672") {
+                window.location.href = "password.html"; // change to actual target
+            } else {
+                alert("Invalid mobile number.");
+            }
+        });
+        </script>
+           
 
-    <script src="script.js"><script>
-document.querySelector("button").addEventListener("click", function () {
-    const mobile = document.getElementById("mobile").value.trim();
-
-    // Simulate login with one valid number
-    if (mobile === "876787272") {
-        window.location.href = "password.html"; // change to actual target
-    } else {
-        alert("Invalid mobile number.");
-    }
-});
-</script>
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
