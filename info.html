@@ -1,41 +1,107 @@
-<script>
-    const yearSelect = document.getElementById('year');
-    const currentYear = new Date().getFullYear();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Details</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+<body>
+    <div class="more-details-container">
+        <div class="more-details-header">
+            <h1>More Details</h1>
+        </div>
+        <div class="more-details-form">
+            <div class="dob-group">
+                <div class="input-group">
+                    <label for="day">Day</label>
+                     <input type="number" id="day" name="day" placeholder="DD" required min="1" max="31">
+                </div>
+                <div class="input-group">
+                    <label for="month">Month</label>
+                    <select id="month" name="month" required>
+                        <option value="">Select Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required>
+                        <option value="">Select Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode" placeholder="Enter pincode" required>
+            </div>
+            <button type="submit" class="continue-button">CONTINUE</button>
+        </div>
+    </div>
 
-    for (let year = currentYear; year >= 1920; year--) {
-        const option = document.createElement('option');
-        option.value = year;
-        option.textContent = year;
-        yearSelect.appendChild(option);
-    }
 
-    const continueButton = document.querySelector('.continue-button');
 
-    if (continueButton) {
-        continueButton.addEventListener('click', () => {
-            // VVVV  CORRECT THIS LINE VVVV
-            const dayValue = document.getElementById('day').value.trim(); // Use 'day' and perhaps a more fitting variable name
-            const month = document.getElementById('month').value;
-            const year = document.getElementById('year').value.trim();
-            const gender = document.getElementById('gender').value;
-            const pincode = document.getElementById('pincode').value.trim();
+    <script>
+        const yearSelect = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+    
+        for (let year = currentYear; year >= 1920; year--) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+    
+        const continueButton = document.querySelector('.continue-button');
+    
+        if (continueButton) {
+            continueButton.addEventListener('click', () => {
+                // VVVV  CORRECT THIS LINE VVVV
+                const dayValue = document.getElementById('day').value.trim(); // Use 'day' and perhaps a more fitting variable name
+                const month = document.getElementById('month').value;
+                const year = document.getElementById('year').value.trim();
+                const gender = document.getElementById('gender').value;
+                const pincode = document.getElementById('pincode').value.trim();
+    
+                // VVVV  UPDATE LOGGING VVVV
+                console.log("Day:", dayValue); // Log the correct variable
+                console.log("Month:", month);
+                console.log("Year:", year);
+                console.log("Gender:", gender);
+                console.log("Pincode:", pincode);
+    
+                // VVVV  UPDATE CONDITION VVVV
+                if (dayValue && month && year && gender && pincode) { // Use the correct variable here
+                    // localStorage.setItem("userInfo", JSON.stringify({ day: dayValue, month, year, gender, pincode })); // Updated for consistency
+                    window.location.href = "home.html";
+                } else {
+                    alert("Please fill in all the required fields.");
+                }
+            });
+        } else {
+            console.error("Continue button not found! Check class name.");
+        }
+    </script>
 
-            // VVVV  UPDATE LOGGING VVVV
-            console.log("Day:", dayValue); // Log the correct variable
-            console.log("Month:", month);
-            console.log("Year:", year);
-            console.log("Gender:", gender);
-            console.log("Pincode:", pincode);
-
-            // VVVV  UPDATE CONDITION VVVV
-            if (dayValue && month && year && gender && pincode) { // Use the correct variable here
-                // localStorage.setItem("userInfo", JSON.stringify({ day: dayValue, month, year, gender, pincode })); // Updated for consistency
-                window.location.href = "home.html";
-            } else {
-                alert("Please fill in all the required fields.");
-            }
-        });
-    } else {
-        console.error("Continue button not found! Check class name.");
-    }
-</script>
+</body>
+</html>
