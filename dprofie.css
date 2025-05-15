@@ -2,14 +2,15 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    color: #259730;
 }
 
 .doctor-profile-container {
     max-width: 600px;
     margin: 20px auto;
     background-color: #fff;
+    background: #0c426e;
+    background: linear-gradient(90deg, rgba(12, 66, 110, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -30,7 +31,7 @@ body {
 }
 
 .edit-profile-button {
-    background-color: #007bff;
+    background-color: #0b0b0b;
     color: white;
     border: none;
     border-radius: 8px;
@@ -110,12 +111,12 @@ body {
 .detail-row label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: #128621;
     display: block;
 }
 
 .detail-row input, .detail-row textarea, .detail-row select {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
