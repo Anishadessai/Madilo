@@ -4,91 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Home</title>
-    <link rel="stylesheet" href="home.css">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <div class="home-container">
-        <header class="home-header">
-            <div class="location-info">
-                <i a href="profile.html" class="fas fa-user-circle user-icon"></a></i>
-                <i class="fas fa-map-marker-alt location-icon"></i>
-                <span>Goa</span>
+<body class="font-sans bg-gray-50 text-gray-800 p-4 sm:p-6 md:p-8">
+    <div class="home-container max-w-lg mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <!-- Header Section -->
+        <header class="home-header bg-blue-600 text-white p-5 rounded-t-2xl flex flex-col gap-4">
+            <div class="location-info grid grid-cols-3 items-center text-lg">
+                <!-- User Profile Icon on the left -->
+                <a href="profile.html" class="flex items-center gap-2 text-white hover:text-blue-100 transition-colors col-span-1 cursor-pointer">
+                    <i class="fas fa-user-circle text-3xl"></i>
+                    <span class="font-semibold">Hello, Patient!</span>
+                </a>
+                <!-- "Goa" and location icon centered -->
+                <div class="flex items-center justify-center gap-2 col-span-1 text-white hover:text-blue-100 transition-colors cursor-pointer" onclick="handleLocationClick()">
+                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                    <span>Goa</span>
+                </div>
+                <!-- Empty div to balance the grid -->
+                <div class="col-span-1"></div>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for clinic and hospitals">
+            <div class="search-bar relative">
+                <input type="text" placeholder="Search for clinics and hospitals"
+                       class="w-full pl-12 pr-4 py-3 rounded-lg border-none text-base text-gray-800 focus:ring-2 focus:ring-blue-400 transition-all shadow-inner">
+                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer" onclick="triggerSearch()"></i>
             </div>
         </header>
 
-        <section class="appointment-options">
-            <div class="appointment-card">
-                <img src="Prakash.jpg" alt="Book In-Clinic Appointment">
-                <h3><a href="docos.html">Book In-Clinic Appointment</h3>
-                <i class="fas fa-arrow-right"></i>
+        <!-- Appointment Options Section -->
+        <section class="appointment-options flex p-5 gap-4 overflow-x-auto snap-x snap-mandatory">
+            <!-- In-Clinic Appointment Card -->
+            <div class="appointment-card bg-blue-50 rounded-xl p-4 flex-none w-64 sm:w-72 md:w-80 shadow-md relative flex flex-col justify-between cursor-pointer hover:shadow-lg hover:bg-blue-100 transition-all" onclick="window.location.href='docos.html'">
+                <img src="https://placehold.co/250x140/e0f7fa/333?text=In-Clinic+Appointment" alt="Book In-Clinic Appointment"
+                     onerror="this.onerror=null;this.src='https://placehold.co/250x140/e0f7fa/333?text=Image+Error';"
+                     class="w-full rounded-lg mb-3 aspect-video object-cover">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Book In-Clinic Appointment</h3>
+                <i class="fas fa-arrow-right absolute bottom-4 right-4 text-2xl text-blue-700"></i>
             </div>
-            <div class="appointment-card">
-                <img src="video.png" alt="Instant Video Consultation">
-                <h3>Instant Video Consultation</h3>
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </section>
-
-        <section class="find-doctor">
-            <h2>Find a Doctor for Your Health Problem</h2>
-            <div class="specialties-grid">
-                <div class="specialty-item">
-                    <i class="fas fa-stethoscope"></i>
-                    <span>General Physician</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-user-injured"></i>
-                    <span>Skin & Hair</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-female"></i>
-                    <span>Women's Health</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-tooth"></i>
-                    <span>Dental Care</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-child"></i>
-                    <span>Child Specialist</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-head-side-cough"></i>
-                    <span>Ear, Nose, Throat</span>
-                </div>
-                <div class="specialty-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>Mental Wellness</span>
-                </div>
-                <div class="specialty-item more-option"></a>
-                    <span>20+</span>
-                    <span>more</span>
-                </div>
+            <!-- Instant Video Consultation Card -->
+            <div class="appointment-card bg-blue-50 rounded-xl p-4 flex-none w-64 sm:w-72 md:w-80 shadow-md relative flex flex-col justify-between cursor-pointer hover:shadow-lg hover:bg-blue-100 transition-all" onclick="handleVideoConsultation()">
+                <img src="https://placehold.co/250x140/e0f7fa/333?text=Video+Consultation" alt="Instant Video Consultation"
+                     onerror="this.onerror=null;this.src='https://placehold.co/250x140/e0f7fa/333?text=Image+Error';"
+                     class="w-full rounded-lg mb-3 aspect-video object-cover">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Instant Video Consultation</h3>
+                <i class="fas fa-arrow-right absolute bottom-4 right-4 text-2xl text-blue-700"></i>
             </div>
         </section>
 
-        <section class="featured-services">
-            <div class="featured-header">
-                <i class="far fa-star"></i>
-                <h2>Featured services</h2>
+        <!-- Find a Doctor Section -->
+        <section class="find-doctor p-5">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Find a Doctor for Your Health Problem</h2>
+            <div class="specialties-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('General Physician')">
+                    <i class="fas fa-stethoscope text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">General Physician</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Skin & Hair')">
+                    <i class="fas fa-user-injured text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Skin & Hair</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Women\'s Health')">
+                    <i class="fas fa-female text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Women's Health</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Dental Care')">
+                    <i class="fas fa-tooth text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Dental Care</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Child Specialist')">
+                    <i class="fas fa-child text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Child Specialist</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Ear, Nose, Throat')">
+                    <i class="fas fa-head-side-cough text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Ear, Nose, Throat</span>
+                </div>
+                <div class="specialty-item bg-emerald-50 rounded-xl p-3 shadow-sm flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-100 transition-colors" onclick="handleSpecialtyClick('Mental Wellness')">
+                    <i class="fas fa-heartbeat text-4xl text-emerald-600 mb-2"></i>
+                    <span class="text-sm text-emerald-800">Mental Wellness</span>
+                </div>
+                <div class="specialty-item more-option bg-indigo-100 text-indigo-700 font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-200 transition-colors" onclick="handleMoreSpecialties()">
+                    <span class="text-xl">20+</span>
+                    <span class="text-sm">more</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Services Section -->
+        <section class="featured-services p-5 bg-purple-50 rounded-xl mx-4 my-5">
+            <div class="featured-header flex items-center gap-2 mb-4 text-purple-700">
+                <i class="far fa-star text-xl"></i>
+                <h2 class="text-xl font-bold">Featured services</h2>
             </div>
             <div class="affordable-procedures">
-                <h3>Affordable Procedures by Expert Doctors</h3>
-                <div class="procedure-icons">
-                    <div class="procedure-icon">
-                        <img src="procedure1.png" alt="Procedure 1">
+                <h3 class="text-lg font-semibold mb-3 text-gray-800">Affordable Procedures by Expert Doctors</h3>
+                <div class="procedure-icons flex gap-4 overflow-x-auto snap-x snap-mandatory">
+                    <div class="procedure-icon bg-white rounded-lg p-3 shadow-sm flex-none cursor-pointer hover:shadow-md transition-shadow" onclick="handleProcedureClick('Procedure 1')">
+                        <img src="https://placehold.co/60x60/fff/333?text=Proc1" alt="Procedure 1"
+                             onerror="this.onerror=null;this.src='https://placehold.co/60x60/fff/333?text=Error';"
+                             class="w-16 h-16 block">
                     </div>
-                    <div class="procedure-icon">
-                        <img src="procedure2.png" alt="Procedure 2">
+                    <div class="procedure-icon bg-white rounded-lg p-3 shadow-sm flex-none cursor-pointer hover:shadow-md transition-shadow" onclick="handleProcedureClick('Procedure 2')">
+                        <img src="video.png" alt="Procedure 2"
+                             onerror="this.onerror=null;this.src='https://placehold.co/60x60/fff/333?text=Error';"
+                             class="w-16 h-16 block">
                     </div>
-                    <div class="procedure-icon">
-                        <img src="procedure3.png" alt="Procedure 3">
+                    <div class="procedure-icon bg-white rounded-lg p-3 shadow-sm flex-none cursor-pointer hover:shadow-md transition-shadow" onclick="handleProcedureClick('Procedure 3')">
+                        <img src="clinic" alt="Procedure 3"
+                             onerror="this.onerror=null;this.src='https://placehold.co/60x60/fff/333?text=Error';"
+                             class="w-16 h-16 block">
                     </div>
-                    <div class="procedure-icon more-option">
+                    <div class="procedure-icon more-option bg-pink-100 text-pink-700 w-16 h-16 rounded-full flex items-center justify-center font-bold text-lg flex-none cursor-pointer hover:bg-pink-200 transition-colors" onclick="handleMoreProcedures()">
                         <span>50+</span>
                     </div>
                 </div>
@@ -96,6 +125,60 @@
         </section>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to handle location click
+        function handleLocationClick() {
+            console.log("Location info clicked!");
+            alert("Opening location settings or map for Goa!");
+        }
+
+        // Function to trigger search (when search icon is clicked)
+        function triggerSearch() {
+            const searchInput = document.querySelector('.search-bar input');
+            const searchTerm = searchInput.value;
+            if (searchTerm) {
+                console.log('Searching for:', searchTerm);
+                alert(`Searching for: "${searchTerm}"`);
+            } else {
+                alert("Please enter a search term.");
+            }
+        }
+
+        // Functions for "More" options
+        function handleMoreSpecialties() {
+            console.log("Showing more specialties!");
+            alert("This would show a full list of 20+ specialties!");
+        }
+
+        function handleMoreProcedures() {
+            console.log("Showing more procedures!");
+            alert("This would show a full list of 50+ procedures!");
+        }
+
+        // Function for Instant Video Consultation card
+        function handleVideoConsultation() {
+            console.log("Initiating Instant Video Consultation!");
+            alert("Starting video consultation!");
+        }
+
+        // Function for individual specialty item clicks
+        function handleSpecialtyClick(specialtyName) {
+            console.log(`Selected specialty: ${specialtyName}`);
+            alert(`You selected: ${specialtyName}`);
+        }
+
+        // Function for individual procedure icon clicks
+        function handleProcedureClick(procedureName) {
+            console.log(`Selected procedure: ${procedureName}`);
+            alert(`You selected: ${procedureName}`);
+        }
+
+        // Optional: Add a simple search functionality (for demonstration)
+        document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                triggerSearch();
+            }
+        });
+    </script>
 </body>
 </html>
